@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+      font-family: "Enchanted Land";
+      font-weight: 700;
+      src: url("./assets/fonts/Enchanted-Land.otf");
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      font-weight: 400;
+      src: url("./assets/fonts/montserrat/Montserrat-Regular.ttf");
+    }
+}
+
+@keyframes rotate-circle {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
