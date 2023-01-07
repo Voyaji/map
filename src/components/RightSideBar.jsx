@@ -19,7 +19,7 @@ const RightSideBar = ({showSideBar, setShowSideBar}) => {
             border-2 h-screen
             ${showSideBar? 'z-[1000] opacity-100': '-z-10 opacity-0'}
             right-0
-            bg-white w-3/12 fixed top-0 h-full z-50 transition-opacity duration-300 ease-in-out
+            bg-white w-3/12 fixed top-0 h-full transition-opacity duration-200 ease-in-out
             flex flex-col
             `}
             style={{
