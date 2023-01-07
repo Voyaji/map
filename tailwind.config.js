@@ -26,10 +26,28 @@ module.exports = {
                     '100%': {
                         transform: 'rotateY(360deg)'
                     }
+                },
+                pulse: {
+                    '0%': {
+                        transform: 'scale(1)'
+                    },
+                    '25%': {
+                        transform: 'scale(1.4)'
+                    },
+                    '50%': {
+                        transform: 'scale(1)'
+                    },
+                    '75%': {
+                        transform: 'scale(1.4)'
+                    },
+                    '100%': {
+                        transform: 'scale(1)'
+                    },
                 }
             },
             animation: {
-                rotateZ: 'rotateZ 1s ease-in-out infinite'
+                rotateZ: 'rotateZ 1s ease-in-out infinite',
+                pulse: 'pulse 2s ease-in-out infinite'
             }
         },
     },

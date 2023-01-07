@@ -36,7 +36,6 @@ function App() {
                                     <video ref={mapRef} className="absolute top-0 left-0 -z-10 w-full h-full" autoPlay={true} muted={true} loop={true}>
                                         <source src={require('./assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                                     </video>
-                                    {/* <Map /> */}
                                     <MapElements />
                                 </div>
                             </TransformComponent>
