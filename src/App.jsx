@@ -23,7 +23,13 @@ function App() {
                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                         <>
                             <TransformComponent>
-                                <div className='w-screen'>
+
+                                <div className='w-screen relative'>
+                                    <video className="w-full max-h-screen absolute top-0 left-0 -z-10" autoPlay={true} muted={true} loop={true}>
+                                        <source src={require('./assets/videos/mapp.mp4')} type="video/mp4" />
+                                        {/* <source src={require('./assets/videos/videoplayback.mp4')} type="video/mp4" /> */}
+                                        {/* <source src={require('./assets/videos/valohd.mp4')} type="video/mp4" /> */}
+                                    </video>
                                     <Map />
                                 </div>
                             </TransformComponent>
