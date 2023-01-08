@@ -12,11 +12,19 @@ import { useRef } from 'react';
 import MapElements from './components/MapElements';
 import SideBar from './components/SideBar';
 import AboutUsSidebar from './components/AboutUsSideBar';
+import { useEffect } from 'react';
 
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
     const [showLeftSideBar, setShowLeftSideBar] = useState(false)
     const {width:windowWidth, height:windowHeight} = useWindowSize();
+
+    const [rerenderOnce, setRerenderOnce] = useState(false);
+    useEffect(() => {
+        setTimeout(() => {
+            setRerenderOnce(true);
+        }, [10])
+    }, [])
 
     const mapRef = useRef()
     return (
