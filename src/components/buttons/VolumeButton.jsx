@@ -89,7 +89,7 @@ const VolumeButton = ({ onVolumeToggle }) => {
     const [isVolumeOn, setIsVolumeOn] = useState(true);
 
     return (
-        <div onClick={() => setIsVolumeOn(!isVolumeOn)} >
+        <div onClick={() => setIsVolumeOn(!isVolumeOn)} className="flex" >
             {isVolumeOn? <VolumeOnButton /> : <VolumeOffButton />}
         </div>
     )

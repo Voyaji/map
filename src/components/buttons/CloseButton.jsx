@@ -2,9 +2,9 @@ import React from 'react'
 
 const CloseButton = ({onClose, className}) => {
   return (
-    <div onClick={() => onClose()} className={className} >
+    <div onClick={() => onClose()} className={`${className} flex`}>
 
-    <svg className='hover:fill-yellow-button group cursor-pointer container' 
+    <svg className='hover:fill-yellow-button group cursor-pointer container flex' 
         width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <style>{`
