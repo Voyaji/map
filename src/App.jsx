@@ -10,15 +10,17 @@ import useWindowSize from './hooks/useWindowResize';
 import RotateYourDevice from './components/RotateYourDevice';
 import { useRef } from 'react';
 import MapElements from './components/MapElements';
+import SideBar from './components/SideBar';
+import AboutUsSidebar from './components/AboutUsSideBar';
 
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
+    const [showLeftSideBar, setShowLeftSideBar] = useState(false)
     const {width:windowWidth, height:windowHeight} = useWindowSize();
 
     const mapRef = useRef()
     return (
         <>
-            {/* <div className='h-screen w-screen bg-cream'> */}
             <div className='bg-cream h-screen w-screen'>
                 <TransformWrapper
                     initialScale={1.4}
@@ -33,10 +35,10 @@ function App() {
                             <TransformComponent contentStyle={{width: windowWidth, height: windowHeight}}>
 
                                 <div className='h-full w-full relative'>
-                                    <video ref={mapRef} className="absolute top-0 left-0 -z-10 w-full h-full" autoPlay={true} muted={true} loop={true}>
+                                    <video ref={mapRef} className="absolute top-0 left-0 -z-10 w-full h-full" autoPlay={true} muted={true} loop={true} playsInline={true}>
                                         <source src={require('./assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                                     </video>
-                                    <MapElements />
+                                    <MapElements setShowLeftSideBar={setShowLeftSideBar}/>
                                 </div>
                             </TransformComponent>
 
@@ -53,7 +55,15 @@ function App() {
                     )}
                 </TransformWrapper>
             </div>
-            <RightSideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} />
+
+            <SideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} position="right">
+                <AboutUsSidebar setShowSideBar={setShowRightSideBar}/>
+            </SideBar>
+
+            <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">
+                <AboutUsSidebar setShowSideBar={setShowLeftSideBar}/>
+            </SideBar>
+
             <RotateYourDevice />
         </>
 
