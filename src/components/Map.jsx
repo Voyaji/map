@@ -1,75 +1,51 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
+import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
+import useWindowSize from '../hooks/useWindowResize'
+import MenuButton from './buttons/MenuButton'
+import VolumeButton from './buttons/VolumeButton'
+import ZoomInButton from './buttons/ZoomInButton'
+import ZoomOutButton from './buttons/ZoomOutButton'
+import MapElements from './MapElements'
 
-const Map = () => {
-    const alertLocation = () => {
-        alert("Pin clicked!")
-    }
+const Map = ({setShowLeftSideBar, setShowRightSideBar}) => {
+    const mapRef = useRef()
+    const {width:windowWidth, height:windowHeight} = useWindowSize();
 
-    const [mountainScale, setMountainScale] = useState(1);
-    const [mountainAnimation, setMountainAnimation] = useState('paused')
-
-    const [capitalScale, setCapitalScale] = useState(1);
 
 
     return (
-        <svg className='w-full h-full z-10'
-            id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1599 1024">
-            <defs>
-                <style>{`
-                    // .cls-1{
-                    //     fill:#c82026;
-                    //     stroke:#fff;
-                    //     stroke-miterlimit:10;
-                    //     stroke-width:2px;
-                    //     cursor:pointer;
-                    //     transition: transform 0.2s;
-                    // }
+        <TransformWrapper
+            initialScale={1.4}
+            maxScale={3}
+            centerOnInit
+            wheel={{ step: 0.2 }}
+            panning={{ excluded: ['panningDisabled'] }}
+            pinch={{ excluded: ['pinchDisabled'], step: 3 }}
+        >
+            {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+                <>
+                    <TransformComponent contentStyle={{ width: windowWidth, height: windowHeight }}>
 
-                    // .cls-1:hover{
-                    //     fill: black;
-                    // }
+                        <div className='h-full w-full relative'>
+                            <video ref={mapRef} className="absolute top-0 left-0 -z-10 w-full h-full" autoPlay={true} muted={true} loop={true} playsInline={true}>
+                                <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
+                            </video>
+                            <MapElements setShowLeftSideBar={setShowLeftSideBar} />
+                        </div>
+                    </TransformComponent>
 
-                    // circle{
-                    //     transform: translate3d(0px,0px,1px) scale(1);
-                    //     transition: transform 0.2s;
-                    //   }
-                    //   circle:hover{  
-                    //     transform: translate3d(0px,0px,1px) scale(1.1);
-                    //   }
-                `}</style>
-            </defs>           
-            <circle className="cls-1 animate-rotateZ" onClick={alertLocation} cx="1277.35" cy="261.72" r="26.8" style={{transformOrigin: '1277.35px 500.72px'}}/>
-            <circle 
-                cx="200.48" 
-                cy="778.24" 
-                r="26.8" 
-                style={{
-                    transition: '500ms', 
-                    transform: `scale(${mountainScale}) `, 
-                    transformOrigin: '200.48px 778.24px',
-                    animation: `rotate-circle 500ms linear infinite ${mountainAnimation}`
-                }} 
-                onMouseEnter={() => {
-                    setMountainScale(2)
-                    setMountainAnimation('running')
-                }}
-                onMouseLeave={() => {
-                    setMountainScale(1)
-                    setMountainAnimation('paused')
-                }}/>
-            <circle 
-                cx="670.04" 
-                cy="689.02" 
-                r="26.8" 
-                style={{transition: '500ms', transform: `scale(${capitalScale})`, transformOrigin: '670.04px 689.02px'}}
-                onMouseEnter={() => {
-                    setCapitalScale(2)
-                }}
-                onMouseLeave={() => {
-                    setCapitalScale(1)
-                }}/>
-        </svg>
+                    <div className="fixed right-10 top-10 space-x-2 flex z-50">
+                        <VolumeButton />
+                        <MenuButton onMenu={() => setShowRightSideBar(true)} />
+                    </div>
+
+                    <div className='fixed right-10 top-0 bottom-0 h-full flex flex-col justify-center items-center'>
+                        <ZoomInButton onZoomIn={zoomIn} />
+                        <ZoomOutButton onZoomOut={zoomOut} />
+                    </div>
+                </>
+            )}
+        </TransformWrapper>
     )
 }
 
