@@ -23,7 +23,7 @@ function App() {
     useEffect(() => {
         setTimeout(() => {
             setRerenderOnce(true);
-        }, [10])
+        }, [1000])
     }, [])
 
     const mapRef = useRef()

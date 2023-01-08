@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-const VolumeOnButton = () => {
+const VolumeOnButton = ({className}) => {
     return (
-        <svg className='hover:fill-yellow-button group cursor-pointer container flex'
+        <svg className={`hover:fill-yellow-button group cursor-pointer container flex ${className}`}
             width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <style>{`
@@ -42,9 +42,9 @@ const VolumeOnButton = () => {
     )
 }
 
-const VolumeOffButton = () => {
+const VolumeOffButton = ({className}) => {
     return (
-        <svg className='hover:fill-yellow-button group cursor-pointer container flex'
+        <svg className={`hover:fill-yellow-button group cursor-pointer container flex ${className}`}
             width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <style>{`
@@ -89,8 +89,9 @@ const VolumeButton = ({ onVolumeToggle }) => {
     const [isVolumeOn, setIsVolumeOn] = useState(true);
 
     return (
-        <div onClick={() => setIsVolumeOn(!isVolumeOn)} className="flex" >
-            {isVolumeOn? <VolumeOnButton /> : <VolumeOffButton />}
+        <div onClick={() => setIsVolumeOn(!isVolumeOn)} className="flex relative w-[80px] h-[80px]" >
+            <VolumeOnButton  className={`absolute inset-0 ${isVolumeOn? 'z-20':'z-10'}`}/> 
+            <VolumeOffButton className={`absolute inset-0 ${!isVolumeOn? 'z-20':'z-10'}`} />
         </div>
     )
 }
