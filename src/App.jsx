@@ -72,7 +72,7 @@ function App() {
                 <AboutUsSidebar setShowSideBar={setShowLeftSideBar}/>
             </SideBar>
 
-            <RotateYourDevice />
+            {/* <RotateYourDevice /> */}
         </>
 
     );
