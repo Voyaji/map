@@ -40,7 +40,7 @@ function App() {
                 >
                     {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                         <>
-                            <TransformComponent contentStyle={{width: windowWidth, height: windowHeight}}>
+                            <TransformComponent contentStyle={{width: '100%', height: '100%'}} wrapperStyle={{width:'100%', height:'100%'}}>
 
                                 <div className='h-full w-full relative'>
                                     <video ref={mapRef} className="absolute top-0 left-0 -z-10 w-full h-full" autoPlay={true} muted={true} loop={true} playsInline={true}>
