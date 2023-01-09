@@ -26,7 +26,6 @@ function App() {
         }, [1000])
     }, [])
 
-    const mapRef = useRef()
     return (
         <>
             <div className='bg-cream h-screen w-screen'>

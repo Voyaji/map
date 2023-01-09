@@ -11,7 +11,8 @@ const MapElements = ({setShowLeftSideBar}) => {
 
 
     return (
-        <svg className='w-full h-full z-10'
+        // <svg className='w-full h-full z-10'
+        <svg className='w-full h-full z-10 absolute inset-0'
             xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1280">
             <defs>
                 <style>
