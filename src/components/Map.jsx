@@ -13,9 +13,9 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
 
     return (
         <TransformWrapper
-            initialScale={2}
-            maxScale={4}
-            minScale={2}
+            initialScale={3}
+            maxScale={8}
+            minScale={3}
             centerOnInit
             wheel={{ step: 0.2 }}
             panning={{ excluded: ['panningDisabled'] }}
