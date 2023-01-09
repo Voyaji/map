@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch'
 import useWindowSize from '../hooks/useWindowResize'
 import MenuButton from './buttons/MenuButton'
@@ -10,6 +10,16 @@ import MapSVG from '../assets/images/MAP-blank.svg'
 
 const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
+    const [showControls, setShowControls] = useState(false)
+
+    const mapRef = useRef()
+    
+    useEffect(() => {
+        setTimeout(() => {
+            setShowControls(true)
+            mapRef.current.click()
+        }, [1000])
+    }, [])
 
     return (
         <TransformWrapper
@@ -29,14 +39,14 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                         {/* <img src={require('../assets/images/big-image.jpeg')} className="h-full w-full" alt=""/> */}
                         <div className='relative bg-blue-300'>
                             
-                            <video preload={true} className="relative z-10 bg-yellow-300" autoPlay={true} muted={true} loop={true} playsInline={true} webkit-playsinline={true}>
+                            <video ref={mapRef} preload={true} className="relative z-10 bg-yellow-300" autoPlay={true} muted={true} loop={true} playsInline={true} webkit-playsinline={true}>
                                 <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                             </video>
                             <MapElements setShowLeftSideBar={setShowLeftSideBar} />
                         </div>
                     </TransformComponent>
 
-                    <div className="fixed right-10 top-10 space-x-2 flex z-50">
+                    {showControls && <><div className="fixed right-10 top-10 space-x-2 flex z-50">
                         <VolumeButton />
                         <MenuButton onMenu={() => setShowRightSideBar(true)} />
                     </div>
@@ -44,7 +54,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                     <div className='fixed right-10 top-1/2 translate-y-1/2 flex flex-col justify-center items-center'>
                         <ZoomInButton onZoomIn={zoomIn} />
                         <ZoomOutButton onZoomOut={zoomOut} />
-                    </div>
+                    </div></>}
                 </>
             )}
         </TransformWrapper>
