@@ -29,7 +29,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                         {/* <img src={require('../assets/images/big-image.jpeg')} className="h-full w-full" alt=""/> */}
                         <div className='h-full w-auto relative bg-blue-300'>
                             
-                            <video preload={true} className="relative z-10w-auto h-full bg-yellow-300" autoPlay={true} muted={true} loop={true} playsInline={true} webkit-playsinline={true}>
+                            <video preload={true} className="relative z-10 w-auto h-full bg-yellow-300" autoPlay={true} muted={true} loop={true} playsInline={true} webkit-playsinline={true}>
                                 <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                             </video>
                             <MapElements setShowLeftSideBar={setShowLeftSideBar} />
