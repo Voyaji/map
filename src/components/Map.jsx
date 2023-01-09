@@ -23,13 +23,13 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
         >
             {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                 <>
-                    <TransformComponent wrapperStyle={{ width: '100%', height: '100vh' }}>
+                    <TransformComponent wrapperStyle={{ width: '100%', height: '100vh', backgroundColor: 'red' }}>
 
                         {/* <img src={MapSVG} className="h-full w-full" alt=""/> */}
                         {/* <img src={require('../assets/images/big-image.jpeg')} className="h-full w-full" alt=""/> */}
-                        <div className='h-full w-auto relative'>
+                        <div className='h-full w-auto relative bg-blue-300'>
                             
-                            <video preload={true} className="relative z-10 w-[2000px] h-full bg-yellow-300 object-cover" autoPlay={true} muted={true} loop={true} playsInline={true} webkit-playsinline={true}>
+                            <video preload={true} className="relative z-10w-auto h-full bg-yellow-300 object-cover" autoPlay={true} muted={true} loop={true} playsInline={true} webkit-playsinline={true}>
                                 <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                             </video>
                             <MapElements setShowLeftSideBar={setShowLeftSideBar} />
