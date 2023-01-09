@@ -41,7 +41,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                         <MenuButton onMenu={() => setShowRightSideBar(true)} />
                     </div>
 
-                    <div className='fixed right-10 top-0 bottom-0 h-full flex flex-col justify-center items-center'>
+                    <div className='fixed right-10 top-1/2 translate-y-1/2 flex flex-col justify-center items-center'>
                         <ZoomInButton onZoomIn={zoomIn} />
                         <ZoomOutButton onZoomOut={zoomOut} />
                     </div>
