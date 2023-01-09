@@ -2,7 +2,7 @@ import React from 'react'
 
 const MenuButton = ({onMenu}) => {
   return (
-    <div onClick={() => onMenu()} className="flex">
+    <div onClick={() => onMenu()} className="flex w-[80px] h-[80px]">
 
         <svg className="hover:fill-yellow-button group cursor-pointer container flex"
             width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
