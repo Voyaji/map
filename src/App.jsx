@@ -3,6 +3,7 @@ import { useState } from 'react';
 import SideBar from './components/SideBar';
 import AboutUsSidebar from './components/AboutUsSideBar';
 import Div100vh from 'react-div-100vh';
+import MapMobile from './components/MapMobile';
 
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
@@ -11,7 +12,8 @@ function App() {
     return (
         <>
             <Div100vh className='bg-cream'>
-                <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
+                {/* <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/> */}
+                <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
 
                 <SideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} position="right">
                     <AboutUsSidebar setShowSideBar={setShowRightSideBar}/>
