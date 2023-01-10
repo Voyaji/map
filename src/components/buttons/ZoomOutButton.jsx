@@ -3,10 +3,10 @@ import { useEffect } from 'react'
 import useWindowSize from '../../hooks/useWindowResize';
 
 const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
-    const {width:windowWidth, height:windowHeight} = useWindowSize();
-    const [orientation, setOrientation] = useState('')
+    // const {width:windowWidth, height:windowHeight} = useWindowSize();
+    // const [orientation, setOrientation] = useState('')
 
-    console.log(orientation)
+    // console.log(orientation)
     
     // if(windowHeight && windowHeight){
     //     if(windowWidth > windowHeight && orientation !== 'landscape'){
@@ -17,24 +17,24 @@ const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
     //     }
     // }
 
-    useEffect(() => {
-        if(orientation === ''){
-            // onReset()
-            // onCenterView()
+    // useEffect(() => {
+    //     if(orientation === ''){
+    //         // onReset()
+    //         // onCenterView()
 
-            return
-        }
-        if(orientation === 'portrait'){
-            // onReset()
+    //         return
+    //     }
+    //     if(orientation === 'portrait'){
+    //         // onReset()
 
-        }
-        if(orientation === 'landscape'){
-            // onCenterView()
-            // onCenterView()
+    //     }
+    //     if(orientation === 'landscape'){
+    //         // onCenterView()
+    //         // onCenterView()
 
-            console.log("reset")
-        }
-    }, [orientation])
+    //         console.log("reset")
+    //     }
+    // }, [orientation])
 
     return (
         <div onClick={() => onZoomOut()} className="flex w-[80px] h-[80px]" >

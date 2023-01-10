@@ -12,15 +12,15 @@ function App() {
         <>
             <Div100vh className='bg-cream'>
                 <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
+
+                <SideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} position="right">
+                    <AboutUsSidebar setShowSideBar={setShowRightSideBar}/>
+                </SideBar>
+
+                <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">
+                    <AboutUsSidebar setShowSideBar={setShowLeftSideBar}/>
+                </SideBar>
             </Div100vh>
-
-            <SideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} position="right">
-                <AboutUsSidebar setShowSideBar={setShowRightSideBar}/>
-            </SideBar>
-
-            <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">
-                <AboutUsSidebar setShowSideBar={setShowLeftSideBar}/>
-            </SideBar>
         </>
 
     );
