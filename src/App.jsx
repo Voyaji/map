@@ -3,15 +3,17 @@ import { useState } from 'react';
 import SideBar from './components/SideBar';
 import AboutUsSidebar from './components/AboutUsSideBar';
 import Div100vh from 'react-div-100vh';
+import useWindowSize from './hooks/useWindowResize';
 import MapMobile from './components/MapMobile';
 
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
     const [showLeftSideBar, setShowLeftSideBar] = useState(false)
+    const {width, height} = useWindowSize()
 
     return (
         <>
-            <Div100vh className='bg-cream'>
+            {height && <div className={`bg-cream`} style={{height: `${height}px`}}>
                 {/* <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/> */}
                 <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
 
@@ -22,7 +24,7 @@ function App() {
                 <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">
                     <AboutUsSidebar setShowSideBar={setShowLeftSideBar}/>
                 </SideBar>
-            </Div100vh>
+            </div>}
         </>
 
     );
