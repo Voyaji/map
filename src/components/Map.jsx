@@ -33,7 +33,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
         >
             {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                 <>
-                    <TransformComponent wrapperStyle={{ width: '100%', height: '100%', backgroundColor: 'red' }}>
+                    <TransformComponent wrapperStyle={{ width: '100%', height: '100%' }}>
 
                         {/* <img src={MapSVG} className="h-full w-full" alt=""/> */}
                         {/* <img src={require('../assets/images/big-image.jpeg')} className="h-full w-full" alt=""/> */}

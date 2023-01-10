@@ -13,6 +13,7 @@ import MapElements from './components/MapElements';
 import SideBar from './components/SideBar';
 import AboutUsSidebar from './components/AboutUsSideBar';
 import { useEffect } from 'react';
+import Div100vh from 'react-div-100vh';
 
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
@@ -39,9 +40,12 @@ function App() {
 
     return (
         <>
-            <div className='bg-cream h-screen w-screen'>
+            {/* <div className='bg-cream h-screen w-screen'>
                 <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
-            </div>
+            </div> */}
+            <Div100vh className='bg-cream'>
+                <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
+            </Div100vh>
 
             <SideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} position="right">
                 <AboutUsSidebar setShowSideBar={setShowRightSideBar}/>
