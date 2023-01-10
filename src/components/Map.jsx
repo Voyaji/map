@@ -9,17 +9,23 @@ import MapElements from './MapElements'
 
 const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
-
+    const [orientation, setOrientation] = useState('')
     const mapRef = useRef()
-    let orientation = '';
+    // let orientation = '';
 
     if(windowWidth && windowHeight){
         mapRef.current?.setAttribute('webkit-playsinline', true)
         if(windowHeight > windowWidth){
-            orientation = 'portrait'
+            if(orientation !== 'portrait'){
+                setOrientation('portrait')
+            }
+            // orientation = 'portrait'
         }
         else{
-            orientation = 'landscape'
+            if(orientation !== 'landscape'){
+                setOrientation('landscape')
+            }
+            // orientation = 'landscape'
         }
     }
        
@@ -45,11 +51,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
             {({ zoomIn, zoomOut, resetTransform, centerView, ...rest }) => (
                 <>
                     <TransformComponent wrapperStyle={{ width: '100%', height: '100%' }}>
-
-                        {/* <img src={MapSVG} className="h-full w-full" alt=""/> */}
-                        {/* <img src={require('../assets/images/big-image.jpeg')} className="h-full w-full" alt=""/> */}
-                        <div className='relative'>
-                            
+                        <div className='relative'>                            
                             <video ref={mapRef} preload='auto' className="relative z-10" autoPlay={true} muted={true} loop={true} playsInline={true}>
                                 <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                             </video>

@@ -8,14 +8,14 @@ const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
 
     console.log(orientation)
     
-    if(windowHeight && windowHeight){
-        if(windowWidth > windowHeight && orientation !== 'landscape'){
-            setOrientation('landscape')
-        }
-        else if (windowWidth < windowHeight && orientation !== 'portrait'){
-            setOrientation('portrait')
-        }
-    }
+    // if(windowHeight && windowHeight){
+    //     if(windowWidth > windowHeight && orientation !== 'landscape'){
+    //         setOrientation('landscape')
+    //     }
+    //     else if (windowWidth < windowHeight && orientation !== 'portrait'){
+    //         setOrientation('portrait')
+    //     }
+    // }
 
     useEffect(() => {
         if(orientation === ''){
@@ -25,12 +25,12 @@ const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
             return
         }
         if(orientation === 'portrait'){
-            onReset()
+            // onReset()
 
         }
         if(orientation === 'landscape'){
             // onCenterView()
-            onReset()
+            // onCenterView()
 
             console.log("reset")
         }
