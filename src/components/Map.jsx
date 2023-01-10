@@ -12,16 +12,23 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
 
     const mapRef = useRef()
+    let orientation = '';
 
     if(windowWidth && windowHeight){
         mapRef.current?.setAttribute('webkit-playsinline', true)
+        if(windowHeight > windowWidth){
+            orientation = 'portrait'
+        }
+        else{
+            orientation = 'landscape'
+        }
     }
-    
+       
     console.log(windowHeight > windowWidth);
 
-    const initialScale = windowHeight > windowWidth? 3 : 1;
-    const maxScale = windowHeight > windowWidth? 8 : 4;
-    const minScale = windowHeight > windowWidth? 3 : 1;
+    const initialScale = orientation === 'landscape' ? 3 : 1;
+    const maxScale = orientation === 'landscape' ? 8 : 4;
+    const minScale = orientation === 'landscape' ? 3 : 1;
 
     return (
         windowWidth && windowHeight ? <TransformWrapper
@@ -58,7 +65,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
 
                     <div className='fixed right-10 top-1/2 -translate-y-1/2 flex flex-col justify-center items-center'>
                         <ZoomInButton onZoomIn={zoomIn} />
-                        <ZoomOutButton onZoomOut={zoomOut} />
+                        <ZoomOutButton onZoomOut={zoomOut}/>
                     </div>
                 </>
             )}

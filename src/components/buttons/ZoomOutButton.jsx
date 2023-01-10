@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react'
 
 const ZoomOutButton = ({ onZoomOut }) => {
+    const {width:windowWidth, height:windowHeight} = useWindowSize();
+    const [orientation, setOrientation] = useState('')
+
+    if(windowHeight && windowHeight){
+        if(windowWidth > windowHeight){
+            setOrientation('landscape')
+        }
+        else {
+            setOrientation('portrait')
+        }
+    }
+
     useEffect(() => {
-        setTimeout(() => {
-            onZoomOut()
-        }, [500])
-    }, [])
+        onZoomOut()
+    }, [orientation])
 
     return (
         <div onClick={() => onZoomOut()} className="flex w-[80px] h-[80px]" >
