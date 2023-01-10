@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/voyaji-react/static/css/main.9a766558.css",
-    "main.js": "/voyaji-react/static/js/main.2a6cb884.js",
-    "static/media/left_side_bar.svg": "/voyaji-react/static/media/left_side_bar.1be74da95abf91bc6759828b381ed3a3.svg",
+    "main.css": "/voyaji-react/static/css/main.492f667f.css",
+    "main.js": "/voyaji-react/static/js/main.72665055.js",
+    "static/media/left_side_bar.svg": "/voyaji-react/static/media/left_side_bar.62f13eeea3bedd7cf0beb13b7d03b0ca.svg",
     "static/media/mapp_resize_1.mp4": "/voyaji-react/static/media/mapp_resize_1.11fe61a0c883a82c5d5c.mp4",
     "static/media/MAP-blank.svg": "/voyaji-react/static/media/MAP-blank.645b4429e12dd04e9f477bcf611ea1ec.svg",
     "static/media/Montserrat-Regular.ttf": "/voyaji-react/static/media/Montserrat-Regular.2a2d37bf7680d86811db.ttf",
@@ -10,7 +10,7 @@
     "index.html": "/voyaji-react/index.html"
   },
   "entrypoints": [
-    "static/css/main.9a766558.css",
-    "static/js/main.2a6cb884.js"
+    "static/css/main.492f667f.css",
+    "static/js/main.72665055.js"
   ]
 }
