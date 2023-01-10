@@ -10,22 +10,33 @@ import MapSVG from '../assets/images/MAP-blank.svg'
 
 const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
-    const [showControls, setShowControls] = useState(false)
+    const [showControls, setShowControls] = useState(true)
 
     const mapRef = useRef()
     
     useEffect(() => {
-        setTimeout(() => {
-            setShowControls(true)
-            mapRef.current.click()
-        }, [1000])
+        if(windowWidth && windowHeight){
+            mapRef.current.setAttribute('webkit-playsinline', true)
+            setTimeout(() => {
+                setShowControls(true)
+                mapRef.current.click()
+            }, [1000])
+        }
     }, [])
 
+    
+    const initialScale = windowHeight > windowWidth? 3 : 1;
+    const maxScale = windowHeight > windowWidth? 8 : 4;
+    const minScale = windowHeight > windowWidth? 3 : 1;
+
     return (
-        <TransformWrapper
-            initialScale={3}
-            maxScale={8}
-            minScale={3}
+        windowWidth && windowHeight ? <TransformWrapper
+            initialScale={initialScale}
+            maxScale={maxScale}
+            minScale={minScale}
+            // initialScale={3}
+            // maxScale={8}
+            // minScale={3}
             centerOnInit
             wheel={{ step: 0.2 }}
             panning={{ excluded: ['panningDisabled'] }}
@@ -39,7 +50,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                         {/* <img src={require('../assets/images/big-image.jpeg')} className="h-full w-full" alt=""/> */}
                         <div className='relative bg-blue-300'>
                             
-                            <video ref={mapRef} preload={true} className="relative z-10 bg-yellow-300" autoPlay={true} muted={true} loop={true} playsInline={true} webkitPlaysInline={true}>
+                            <video ref={mapRef} preload={true} className="relative z-10 bg-yellow-300" autoPlay={true} muted={true} loop={true} playsInline={true}>
                                 <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                             </video>
                             <MapElements setShowLeftSideBar={setShowLeftSideBar} />
@@ -51,13 +62,13 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                         <MenuButton onMenu={() => setShowRightSideBar(true)} />
                     </div>
 
-                    <div className='fixed right-10 top-1/2 translate-y-1/2 flex flex-col justify-center items-center'>
+                    <div className='fixed right-10 top-1/2 -translate-y-1/2 flex flex-col justify-center items-center'>
                         <ZoomInButton onZoomIn={zoomIn} />
                         <ZoomOutButton onZoomOut={zoomOut} />
                     </div></>}
                 </>
             )}
-        </TransformWrapper>
+        </TransformWrapper> : <></>
 
     //     <TransformWrapper
     //     initialScale={1.4}
