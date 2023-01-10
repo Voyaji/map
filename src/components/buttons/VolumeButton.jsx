@@ -24,7 +24,7 @@ const VolumeOnButton = ({className}) => {
                 <path className="group-hover:stroke-black" d="M43.536 32.464C44.0004 32.9283 44.3688 33.4796 44.6202 34.0863C44.8716 34.693 45.0009 35.3433 45.0009 36C45.0009 36.6567 44.8716 37.307 44.6202 37.9137C44.3688 38.5204 44.0004 39.0717 43.536 39.536M46.364 29.636C47.1997 30.4717 47.8627 31.4639 48.315 32.5558C48.7673 33.6478 49.0001 34.8181 49.0001 36C49.0001 37.1819 48.7673 38.3522 48.315 39.4442C47.8627 40.5361 47.1997 41.5283 46.364 42.364M33.586 39H32C31.7348 39 31.4804 38.8946 31.2929 38.7071C31.1054 38.5196 31 38.2652 31 38V34C31 33.7348 31.1054 33.4804 31.2929 33.2929C31.4804 33.1054 31.7348 33 32 33H33.586L38.293 28.293C38.923 27.663 40 28.109 40 29V43C40 43.891 38.923 44.337 38.293 43.707L33.586 39Z" stroke="#B5B5B5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </g>
             <defs>
-                <filter id="filter0_d_130_251" x="0" y="0" width="80.0004" height="80.0004" filterUnits="userSpaceOnUse" ccolorInterpolationFilters="sRGB">
+                <filter id="filter0_d_130_251" x="0" y="0" width="80.0004" height="80.0004" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                     <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dy="4" />
@@ -66,7 +66,7 @@ const VolumeOffButton = ({className}) => {
                 <path className="group-hover:stroke-black" d="M47 36L49 38M45 38L47 36L45 38ZM47 36L49 34L47 36ZM47 36L45 34L47 36Z" stroke="#B5B5B5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </g>
             <defs>
-                <filter id="filter0_d_130_250" x="0" y="0" width="80.0004" height="80.0004" filterUnits="userSpaceOnUse" ccolorInterpolationFilters="sRGB">
+                <filter id="filter0_d_130_250" x="0" y="0" width="80.0004" height="80.0004" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                     <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dy="4" />

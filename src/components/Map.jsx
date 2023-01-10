@@ -10,21 +10,15 @@ import MapSVG from '../assets/images/MAP-blank.svg'
 
 const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
-    const [showControls, setShowControls] = useState(true)
 
     const mapRef = useRef()
-    
-    useEffect(() => {
-        if(windowWidth && windowHeight){
-            mapRef.current.setAttribute('webkit-playsinline', true)
-            setTimeout(() => {
-                setShowControls(true)
-                mapRef.current.click()
-            }, [1000])
-        }
-    }, [])
 
+    if(windowWidth && windowHeight){
+        mapRef.current?.setAttribute('webkit-playsinline', true)
+    }
     
+    console.log(windowHeight > windowWidth);
+
     const initialScale = windowHeight > windowWidth? 3 : 1;
     const maxScale = windowHeight > windowWidth? 8 : 4;
     const minScale = windowHeight > windowWidth? 3 : 1;
@@ -48,16 +42,16 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
 
                         {/* <img src={MapSVG} className="h-full w-full" alt=""/> */}
                         {/* <img src={require('../assets/images/big-image.jpeg')} className="h-full w-full" alt=""/> */}
-                        <div className='relative bg-blue-300'>
+                        <div className='relative'>
                             
-                            <video ref={mapRef} preload={true} className="relative z-10 bg-yellow-300" autoPlay={true} muted={true} loop={true} playsInline={true}>
+                            <video ref={mapRef} preload='auto' className="relative z-10" autoPlay={true} muted={true} loop={true} playsInline={true}>
                                 <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                             </video>
                             <MapElements setShowLeftSideBar={setShowLeftSideBar} />
                         </div>
                     </TransformComponent>
 
-                    {showControls && <><div className="fixed right-10 top-10 space-x-2 flex z-50">
+                    <div className="fixed right-10 top-10 space-x-2 flex z-50">
                         <VolumeButton />
                         <MenuButton onMenu={() => setShowRightSideBar(true)} />
                     </div>
@@ -65,7 +59,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                     <div className='fixed right-10 top-1/2 -translate-y-1/2 flex flex-col justify-center items-center'>
                         <ZoomInButton onZoomIn={zoomIn} />
                         <ZoomOutButton onZoomOut={zoomOut} />
-                    </div></>}
+                    </div>
                 </>
             )}
         </TransformWrapper> : <></>

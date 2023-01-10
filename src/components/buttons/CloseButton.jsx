@@ -25,7 +25,7 @@ const CloseButton = ({onClose, className}) => {
     <path className="group-hover:stroke-black" d="M23 19L35 31M23 31L35 19L23 31Z" stroke="#B5B5B5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </g>
     <defs>
-        <filter id="filter0_d_130_254" x="0" y="0" width="57.9996" height="57.9996" filterUnits="userSpaceOnUse" ccolorInterpolationFilters="sRGB">
+        <filter id="filter0_d_130_254" x="0" y="0" width="57.9996" height="57.9996" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
         <feOffset dy="4"/>

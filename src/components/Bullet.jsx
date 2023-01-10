@@ -11,7 +11,7 @@ const Bullet = ({className}) => {
                 </g>
             </g>
             <defs>
-                <filter id="filter0_d_130_273" x="0" y="0" width="21.9996" height="21.9996" filterUnits="userSpaceOnUse" ccolorInterpolationFilters="sRGB">
+                <filter id="filter0_d_130_273" x="0" y="0" width="21.9996" height="21.9996" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                     <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                     <feOffset dy="4" />

@@ -16,7 +16,7 @@ const TwitterButton = ({ onTwitter, className }) => {
                     </g>
                 </g>
                 <defs>
-                    <filter id="filter0_d_130_257" x="0" y="0" width="80.0004" height="80.0004" filterUnits="userSpaceOnUse" ccolorInterpolationFilters="sRGB">
+                    <filter id="filter0_d_130_257" x="0" y="0" width="80.0004" height="80.0004" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix" />
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="4" />

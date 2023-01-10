@@ -24,7 +24,7 @@ const ZoomInButton = ({ onZoomIn }) => {
                     <path className='group-hover:stroke-black' d="M38 34H35M49 45L43 39L49 45ZM45 34C45 34.9193 44.8189 35.8295 44.4672 36.6788C44.1154 37.5281 43.5998 38.2997 42.9497 38.9497C42.2997 39.5998 41.5281 40.1154 40.6788 40.4672C39.8295 40.8189 38.9193 41 38 41C37.0807 41 36.1705 40.8189 35.3212 40.4672C34.4719 40.1154 33.7003 39.5998 33.0503 38.9497C32.4002 38.2997 31.8846 37.5281 31.5328 36.6788C31.1811 35.8295 31 34.9193 31 34C31 32.1435 31.7375 30.363 33.0503 29.0503C34.363 27.7375 36.1435 27 38 27C39.8565 27 41.637 27.7375 42.9497 29.0503C44.2625 30.363 45 32.1435 45 34ZM38 31V34V31ZM38 34V37V34ZM38 34H41H38Z" stroke="#B5B5B5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </g>
                 <defs>
-                    <filter id="filter0_d_130_252" x="0" y="0" width="80.0004" height="80.0004" filterUnits="userSpaceOnUse" ccolorInterpolationFilters="sRGB">
+                    <filter id="filter0_d_130_252" x="0" y="0" width="80.0004" height="80.0004" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix" />
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                         <feOffset dy="4" />
