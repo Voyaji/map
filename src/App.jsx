@@ -1,5 +1,5 @@
 import Map from './components/Map'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SideBar from './components/SideBar';
 import AboutUsSidebar from './components/AboutUsSideBar';
 import Div100vh from 'react-div-100vh';
@@ -11,9 +11,20 @@ function App() {
     const [showLeftSideBar, setShowLeftSideBar] = useState(false)
     const {width, height} = useWindowSize()
 
+    const [originalWindowHeight, setOriginalWindowHeight] = useState()
+    const [originalWindowWidth, setOriginalWindowWidth] = useState()
+
+
+    useEffect(() => {
+        setOriginalWindowHeight(window.innerHeight)
+        setOriginalWindowWidth(window.innerHeight)
+        console.log("orig", window.innerHeight);
+    }, [])
+    
+
     return (
         <>
-            {height && <div className={`bg-cream`} style={{height: `${height}px`}}>
+            {height && <div className={`bg-cream`} style={{height: `${originalWindowHeight}px`}}>
                 {/* <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/> */}
                 <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
 
