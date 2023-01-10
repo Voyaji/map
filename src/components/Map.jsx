@@ -6,7 +6,6 @@ import VolumeButton from './buttons/VolumeButton'
 import ZoomInButton from './buttons/ZoomInButton'
 import ZoomOutButton from './buttons/ZoomOutButton'
 import MapElements from './MapElements'
-import MapSVG from '../assets/images/MAP-blank.svg'
 
 const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
@@ -26,9 +25,9 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
        
     console.log(windowHeight > windowWidth);
 
-    const initialScale = orientation === 'landscape' ? 3 : 1;
-    const maxScale = orientation === 'landscape' ? 8 : 4;
-    const minScale = orientation === 'landscape' ? 3 : 1;
+    const initialScale = orientation === 'portrait' ? 3 : 1;
+    const maxScale = orientation === 'portrait' ? 8 : 4;
+    const minScale = orientation === 'portrait' ? 3 : 1;
 
     return (
         windowWidth && windowHeight ? <TransformWrapper
@@ -43,7 +42,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
             panning={{ excluded: ['panningDisabled'] }}
             pinch={{ excluded: ['pinchDisabled'], step: 3 }}
         >
-            {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+            {({ zoomIn, zoomOut, resetTransform, centerView, ...rest }) => (
                 <>
                     <TransformComponent wrapperStyle={{ width: '100%', height: '100%' }}>
 
@@ -65,7 +64,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
 
                     <div className='fixed right-10 top-1/2 -translate-y-1/2 flex flex-col justify-center items-center'>
                         <ZoomInButton onZoomIn={zoomIn} />
-                        <ZoomOutButton onZoomOut={zoomOut}/>
+                        <ZoomOutButton onZoomOut={zoomOut} onReset={resetTransform} onCenterView={centerView}/>
                     </div>
                 </>
             )}

@@ -2,21 +2,25 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import useWindowSize from '../../hooks/useWindowResize';
 
-const ZoomOutButton = ({ onZoomOut }) => {
+const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
     const [orientation, setOrientation] = useState('')
 
+    console.log(orientation)
+    
     if(windowHeight && windowHeight){
-        if(windowWidth > windowHeight){
+        if(windowWidth > windowHeight && orientation !== 'landscape'){
             setOrientation('landscape')
         }
-        else {
+        else if (windowWidth < windowHeight && orientation !== 'portrait'){
             setOrientation('portrait')
         }
     }
 
     useEffect(() => {
-        onZoomOut()
+        if(orientation !== ''){
+            onReset()
+        }
     }, [orientation])
 
     return (
