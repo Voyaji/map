@@ -30,7 +30,9 @@ const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
         }
         if(orientation === 'landscape'){
             // onCenterView()
-            console.log("center")
+            onReset()
+
+            console.log("reset")
         }
     }, [orientation])
 

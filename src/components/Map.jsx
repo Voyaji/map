@@ -37,7 +37,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
             // initialScale={3}
             // maxScale={8}
             // minScale={3}
-            centerOnInit
+            centerOnInit={false}
             wheel={{ step: 0.2 }}
             panning={{ excluded: ['panningDisabled'] }}
             pinch={{ excluded: ['pinchDisabled'], step: 3 }}
