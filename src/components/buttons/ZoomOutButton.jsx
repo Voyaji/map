@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import useWindowSize from '../../hooks/useWindowResize';
 
 const ZoomOutButton = ({ onZoomOut }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
