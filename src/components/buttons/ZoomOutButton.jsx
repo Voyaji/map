@@ -18,8 +18,19 @@ const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
     }
 
     useEffect(() => {
-        if(orientation !== ''){
+        if(orientation === ''){
+            // onReset()
+            // onCenterView()
+
+            return
+        }
+        if(orientation === 'portrait'){
             onReset()
+
+        }
+        if(orientation === 'landscape'){
+            // onCenterView()
+            console.log("center")
         }
     }, [orientation])
 
