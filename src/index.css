@@ -4,23 +4,38 @@
 
 @layer base {
     @font-face {
-      font-family: "Enchanted Land";
-      font-weight: 700;
-      src: url("./assets/fonts/Enchanted-Land.otf");
+        font-family: "Enchanted Land";
+        font-weight: 700;
+        src: url("./assets/fonts/Enchanted-Land.otf");
     }
 
     @font-face {
-      font-family: "Montserrat";
-      font-weight: 400;
-      src: url("./assets/fonts/montserrat/Montserrat-Regular.ttf");
+        font-family: "Montserrat";
+        font-weight: 400;
+        src: url("./assets/fonts/montserrat/Montserrat-Regular.ttf");
     }
 }
 
 @keyframes rotate-circle {
     from {
-      transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
     }
+
     to {
-      transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
     }
-  }
+}
+
+:root {
+    --app-height: 100%;
+ }
+ 
+ html,
+ body {
+     padding: 0;
+     margin: 0;
+     overflow: hidden;
+     width: 100vw;
+     height: 100vh;
+     height: var(--app-height);
+ }
