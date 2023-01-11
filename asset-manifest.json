@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/voyaji-react/static/css/main.92082ad7.css",
-    "main.js": "/voyaji-react/static/js/main.05e92714.js",
+    "main.js": "/voyaji-react/static/js/main.218aa1ae.js",
     "static/media/left_side_bar.svg": "/voyaji-react/static/media/left_side_bar.434606b64acc447d88356c1252eafabd.svg",
     "static/media/mapp_resize_1.mp4": "/voyaji-react/static/media/mapp_resize_1.11fe61a0c883a82c5d5c.mp4",
     "static/media/Montserrat-Regular.ttf": "/voyaji-react/static/media/Montserrat-Regular.2a2d37bf7680d86811db.ttf",
@@ -10,6 +10,6 @@
   },
   "entrypoints": [
     "static/css/main.92082ad7.css",
-    "static/js/main.05e92714.js"
+    "static/js/main.218aa1ae.js"
   ]
 }
