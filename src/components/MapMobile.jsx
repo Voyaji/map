@@ -19,7 +19,7 @@ const MapMobile = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                 </video>
                 <MapElements setShowLeftSideBar={setShowLeftSideBar} />
             </div>
-            <div className="fixed right-10 top-10 space-x-2 flex z-50">
+            <div className="fixed right-[2vw] top-[2vh] space-x-2 flex z-50">
                 <VolumeButton />
                 <MenuButton onMenu={() => setShowRightSideBar(true)} />
             </div>
