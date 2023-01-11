@@ -15,20 +15,39 @@ function App() {
     const [originalWindowHeight, setOriginalWindowHeight] = useState()
     const [originalWindowWidth, setOriginalWindowWidth] = useState()
 
+    const isMobileOrTabletBool = isMobileOrTablet()
 
     useEffect(() => {
         setOriginalWindowHeight(window.innerHeight)
-        setOriginalWindowWidth(window.innerHeight)
+        setOriginalWindowWidth(window.innerWidth)
         console.log("orig", window.innerHeight);
     }, [])
     
 
     return (
         <>
-            {height && <div className={`bg-cream`} style={{height: `${originalWindowHeight}px`}}>
+            {isMobileOrTabletBool
+                ? height && <div className={`bg-cream`} style={{height: `${originalWindowHeight}px`}}>
+                        <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
+                    </div>
+                : <Div100vh>
+                    <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
+                </Div100vh>
+            }
+
+            <SideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} position="right">
+                <AboutUsSidebar setShowSideBar={setShowRightSideBar}/>
+            </SideBar>
+
+            <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">
+                <AboutUsSidebar setShowSideBar={setShowLeftSideBar}/>
+            </SideBar>
+
+            {/* {height && <div className={`bg-cream`} style={{height: `${originalWindowHeight}px`}}> */}
+            {/* {height && <div className={`bg-cream`} style={{height: `${isMobileOrTabletBool? originalWindowHeight + 'px' : height}`}}>
                 {
-                    isMobileOrTablet()
-                        ?<MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
+                    isMobileOrTabletBool
+                        ? <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
                         : <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
                 }
                 
@@ -40,7 +59,7 @@ function App() {
                 <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">
                     <AboutUsSidebar setShowSideBar={setShowLeftSideBar}/>
                 </SideBar>
-            </div>}
+            </div>} */}
         </>
 
     );
