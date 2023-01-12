@@ -6,10 +6,13 @@ import useWindowSize from './hooks/useWindowResize';
 import MapMobile from './components/MapMobile';
 import isMobileOrTablet from './utilities/isMobileOrTablet'
 import LocationSideBar from './components/LocationSideBar';
+import ComingSoon from './components/ComingSoon';
 
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
     const [showLeftSideBar, setShowLeftSideBar] = useState(false)
+    const [showComingSoon, setShowComingSoon] = useState(true)
+
     const [leftSideBarData, setLeftSideBarData] = useState(null);
     const {width, height} = useWindowSize()
 
@@ -43,6 +46,8 @@ function App() {
             <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">
                 <LocationSideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} data={leftSideBarData}/>
             </SideBar>
+
+            <ComingSoon showModal={showComingSoon} setShowModal={setShowComingSoon}/>
         </>
 
     );
