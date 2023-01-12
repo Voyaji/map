@@ -54,7 +54,7 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
                     <div className='mt-20 w-full flex-col justify-start items-end'>
                         <span>Follow the voyage:</span>
                         <div className='flex justify-between items-center'>
-                            <div className='flex mt-4 justify-start items-center border-2 border-red-300'>
+                            <div className='flex mt-4 justify-start items-center'>
                                 <DiscordButton />
                                 <TwitterButton />
                             </div>

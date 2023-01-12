@@ -2,9 +2,9 @@ import React from 'react'
 
 const DiscordButton = ({ onDiscord, className }) => {
     return (
-        <div onClick={() => onDiscord()} className={className} >
+        <div onClick={() => onDiscord()} className={`${className} flex`} >
 
-            <svg className='hover:fill-yellow-button group cursor-pointer container'
+            <svg className='hover:fill-yellow-button group cursor-pointer container flex'
                 width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <style>{`

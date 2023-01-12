@@ -2,9 +2,9 @@ import React from 'react'
 
 const TwitterButton = ({ onTwitter, className }) => {
     return (
-        <div onClick={() => onTwitter()} className={className} >
+        <div onClick={() => onTwitter()} className={`${className} flex`} >
 
-            <svg className='hover:fill-yellow-button group cursor-pointer container' 
+            <svg className='hover:fill-yellow-button group cursor-pointer container flex' 
                 width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_130_257)">
                     <g filter="url(#filter0_d_130_257)">

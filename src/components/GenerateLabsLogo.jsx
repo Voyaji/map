@@ -2,7 +2,7 @@ import React from 'react'
 
 const GenerateLabsLogo = ({className}) => {
     return (
-        <svg className={className} 
+        <svg className={`${className} flex`} 
             width="123" height="62" viewBox="0 0 123 62" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g clipPath="url(#clip0_130_259)">
                 <rect width="123" height="62" fill="url(#pattern0)" />
