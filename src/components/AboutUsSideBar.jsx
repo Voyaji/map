@@ -3,7 +3,8 @@ import Bullet from './Bullet'
 import CloseButton from './buttons/CloseButton'
 import DiscordButton from './buttons/DiscordButton'
 import TwitterButton from './buttons/TwitterButton'
-import GenerateLabsLogo from './GenerateLabsLogo'
+import GenerateLabsLogo from '../assets/images/logo_generate_labs.svg'
+// import GenerateLabsLogo from './GenerateLabsLogo'
 import SideBarBackground from '../assets/images/left_side_bar.svg'
 
 
@@ -59,7 +60,8 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
                                 <TwitterButton />
                             </div>
 
-                            <GenerateLabsLogo />
+                            <img src={GenerateLabsLogo} className="pointer-events-none"/>
+                            {/* <GenerateLabsLogo /> */}
                         </div>
                     </div>
                     <div className='flex mt-12 justify-center items-end font-montserrat text-sm'>© GenerateLabs. All rights Reserved.</div>
