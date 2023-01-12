@@ -3,7 +3,7 @@ import Div100vh from 'react-div-100vh'
 
 const ComingSoon = ({showModal, setShowModal}) => {
   return (
-    <Div100vh>
+    <Div100vh className={`fixed ${showModal? 'z-[999] ':'-z-10'}`}>
         <div className={`
             ${showModal? 'z-[999] opacity-60':'-z-10 opacity-0'}
             bg-black opacity-60 w-screen h-full fixed inset-0 duration-200 ease-out
