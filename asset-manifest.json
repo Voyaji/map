@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/voyaji-react/static/css/main.30645b03.css",
-    "main.js": "/voyaji-react/static/js/main.bd9fe2cb.js",
+    "main.js": "/voyaji-react/static/js/main.d9e73368.js",
     "static/media/left_side_bar.svg": "/voyaji-react/static/media/left_side_bar.8d34f8834ccd1527cf6a5be144a31636.svg",
     "static/media/mapp_resize_1.mp4": "/voyaji-react/static/media/mapp_resize_1.11fe61a0c883a82c5d5c.mp4",
     "static/media/rectangle_frame.svg": "/voyaji-react/static/media/rectangle_frame.6eb52bb3b8426b0f4f6b40d97fd79821.svg",
@@ -11,6 +11,6 @@
   },
   "entrypoints": [
     "static/css/main.30645b03.css",
-    "static/js/main.bd9fe2cb.js"
+    "static/js/main.d9e73368.js"
   ]
 }
