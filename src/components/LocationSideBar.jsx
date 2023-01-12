@@ -6,14 +6,11 @@ import { useRef } from 'react'
 const LocationSideBar = ({ showSideBar, setShowSideBar, data }) => {
     const scrollRef = useRef()
 
-
-
     useEffect(() => {
         scrollRef?.current?.scroll({
             top: 0
         })
     }, [showSideBar])
-
 
     return (
         <div className={`

@@ -26,7 +26,8 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
                     backgroundRepeat: 'no-repeat'
                 }}>
 
-                <div className='overflow-scroll mx-11 py-16 mb-6 scrollbar-hide'>
+                <div className='overflow-scroll py-16 mb-6 scrollbar-hide h-screen
+                    mx-8 xl:mx-8'>
                     <CloseButton
                         className="absolute top-6 right-6"
                         onClose={() => setShowSideBar(false)} />
@@ -53,7 +54,7 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
                     <div className='mt-20 w-full flex-col justify-start items-end'>
                         <span>Follow the voyage:</span>
                         <div className='flex justify-between items-center'>
-                            <div className='flex mt-4'>
+                            <div className='flex mt-4 justify-start items-center'>
                                 <DiscordButton />
                                 <TwitterButton />
                             </div>
