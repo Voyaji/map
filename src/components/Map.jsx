@@ -7,7 +7,7 @@ import ZoomInButton from './buttons/ZoomInButton'
 import ZoomOutButton from './buttons/ZoomOutButton'
 import MapElements from './MapElements'
 
-const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
+const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
     const [orientation, setOrientation] = useState('')
     const mapRef = useRef()
@@ -29,8 +29,6 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
         }
     }
        
-    console.log(windowHeight > windowWidth);
-
     const initialScale = orientation === 'portrait' ? 3 : 1;
     const maxScale = orientation === 'portrait' ? 8 : 4;
     const minScale = orientation === 'portrait' ? 3 : 1;
@@ -40,9 +38,6 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
             initialScale={initialScale}
             maxScale={maxScale}
             minScale={minScale}
-            // initialScale={3}
-            // maxScale={8}
-            // minScale={3}
             centerOnInit={false}
             wheel={{ step: 0.2 }}
             panning={{ excluded: ['panningDisabled'] }}
@@ -55,7 +50,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                             <video ref={mapRef} preload='auto' className="relative z-10" autoPlay={true} muted={true} loop={true} playsInline={true}>
                                 <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                             </video>
-                            <MapElements setShowLeftSideBar={setShowLeftSideBar} />
+                            <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData}/>
                         </div>
                     </TransformComponent>
 

@@ -15,21 +15,10 @@ const SideBar = ({showSideBar, setShowSideBar, position, children}) => {
             `}
             onClick={() => setShowSideBar(false)}>
         </div>
-        <div className={`
-            border-2 h-screen
-            ${showSideBar? 'z-[1000] opacity-100': '-z-10 opacity-0'}
-            ${position}-0
-            bg-white w-3/12 fixed top-0 h-full transition-opacity duration-200 ease-in-out
-            flex flex-col
-            `}
-            style={{
-                backgroundImage: `url(${SideBarBackground})`, 
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>
-            
-            {children}
-        </div>
+
+        {children}
+
+
 
     </>
   )
