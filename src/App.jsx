@@ -33,7 +33,7 @@ function App() {
         <>
             {isMobileOrTabletBool
                 ? height && <div className={`bg-cream`} style={{height: `${originalWindowHeight}px`}}>
-                        <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar}/>
+                        <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData}/>
                     </div>
                 : <div className='h-screen'>
                     <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData}/>

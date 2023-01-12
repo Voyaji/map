@@ -9,7 +9,7 @@ import MapElements from './MapElements'
 
 const VIDEO_RATIO = 1.5
 
-const MapMobile = ({ setShowLeftSideBar, setShowRightSideBar }) => {
+const MapMobile = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData }) => {
 
     return (
         <>
@@ -17,7 +17,7 @@ const MapMobile = ({ setShowLeftSideBar, setShowRightSideBar }) => {
                 <video preload='auto' className={`object-cover h-full max-w-none aspect-[1.5] absolute inset-0`} autoPlay={true} muted={true} loop={true} playsInline={true}>
                     <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
                 </video>
-                <MapElements setShowLeftSideBar={setShowLeftSideBar} />
+                <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData}/>
             </div>
             <div className="fixed right-[2vw] top-[2vh] space-x-2 flex z-50">
                 <VolumeButton />
