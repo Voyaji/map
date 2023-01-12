@@ -22,9 +22,9 @@ const LocationSideBar = ({ showSideBar, setShowSideBar, data }) => {
             flex flex-col
             `}>
 
-            <div className='relative bg-cream'>
+            <div className='relative bg-cream h-full'>
 
-                <div className='overflow-scroll py-16 mb-6 scrollbar-hide h-screen
+                <div className='overflow-scroll py-16 mb-6 scrollbar-hide h-full
                     mx-8 xl:mx-8'
                     ref={scrollRef}>
                     <CloseButton

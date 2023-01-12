@@ -21,13 +21,14 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
 
             `}>
             <div
+                className='h-full'
                 style={{
                     backgroundImage: `url(${SideBarBackground})`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat'
                 }}>
 
-                <div className='overflow-scroll py-16 mb-6 scrollbar-hide h-screen
+                <div className='overflow-scroll py-16 mb-6 scrollbar-hide h-full
                     mx-8 xl:mx-8'>
                     <CloseButton
                         className="absolute top-6 right-6"
@@ -61,7 +62,6 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
                             </div>
 
                             <img src={GenerateLabsLogo} className="pointer-events-none"/>
-                            {/* <GenerateLabsLogo /> */}
                         </div>
                     </div>
                     <div className='flex mt-12 justify-center items-end font-montserrat text-sm'>© GenerateLabs. All rights Reserved.</div>
