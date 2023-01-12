@@ -1,16 +1,17 @@
 import React from 'react'
+import Div100vh from 'react-div-100vh'
 
 const ComingSoon = ({showModal, setShowModal}) => {
   return (
-    <>
+    <Div100vh>
         <div className={`
             ${showModal? 'z-[999] opacity-60':'-z-10 opacity-0'}
-            bg-black opacity-60 w-screen h-screen fixed inset-0 duration-200 ease-out
+            bg-black opacity-60 w-screen h-full fixed inset-0 duration-200 ease-out
             `}
             onClick={() => setShowModal(false)}>
         </div>
 
-        <div className={`h-screen w-screen flex justify-center items-center fixed inset-0 ${showModal ? 'z-[1000] opacity-100' : '-z-10 opacity-0'}`}>
+        <div className={`h-full w-screen flex justify-center items-center fixed inset-0 ${showModal ? 'z-[1000] opacity-100' : '-z-10 opacity-0'}`}>
             <div className='z-[1000] w-full h-full flex items-center justify-center'>
                 <svg className='' width="509" height="329" viewBox="0 0 509 329" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                     
@@ -74,23 +75,7 @@ const ComingSoon = ({showModal, setShowModal}) => {
 
             </div>
         </div>
-
-        {/* <div className={`
-            h-screen
-            ${showSideBar? 'z-[1000] opacity-100': '-z-10 opacity-0'}
-            right-0
-            bg-white w-3/12 fixed top-0 h-full transition-opacity duration-200 ease-in-out
-            flex flex-col
-            `}
-            style={{
-                backgroundImage: `url(${SideBarBackground})`, 
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>
-
-        </div> */}
-
-    </>
+    </Div100vh>
   )
 }
 
