@@ -13,7 +13,7 @@ const LocationSideBar = ({ showSideBar, setShowSideBar, data }) => {
     }, [showSideBar])
 
     return (
-        <div className={`
+        data && <div className={`
             h-screen
             ${showSideBar ? 'z-[1000] opacity-100' : '-z-10 opacity-0'}
             left-0
