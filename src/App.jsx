@@ -7,6 +7,7 @@ import MapMobile from './components/MapMobile';
 import isMobileOrTablet from './utilities/isMobileOrTablet'
 import LocationSideBar from './components/LocationSideBar';
 import ComingSoon from './components/ComingSoon';
+import Div100vh from 'react-div-100vh';
 
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
