@@ -6,6 +6,7 @@ import VolumeButton from './buttons/VolumeButton'
 import ZoomInButton from './buttons/ZoomInButton'
 import ZoomOutButton from './buttons/ZoomOutButton'
 import MapElements from './MapElements'
+import NewMapElements from './NewMapElements'
 
 const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
@@ -48,9 +49,10 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData }) =>
                     <TransformComponent wrapperStyle={{ width: '100%', height: '100%' }}>
                         <div className='relative'>                            
                             <video ref={mapRef} preload='auto' className="relative z-10" autoPlay={true} muted={true} loop={true} playsInline={true}>
-                                <source src={require('../assets/videos/mapp_resize_1.mp4')} type="video/mp4" />
+                                <source src={require('../assets/videos/Map for animation2.mp4')} type="video/mp4" />
                             </video>
-                            <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData}/>
+                            {/* <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData}/> */}
+                            <NewMapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData}/>
                         </div>
                     </TransformComponent>
 

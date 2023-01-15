@@ -6,9 +6,11 @@ import TwitterButton from './buttons/TwitterButton'
 import GenerateLabsLogo from '../assets/images/logo_generate_labs.svg'
 // import GenerateLabsLogo from './GenerateLabsLogo'
 import SideBarBackground from '../assets/images/left_side_bar.svg'
+import { useNavigate } from 'react-router-dom'
 
 
-const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
+const AboutUsSidebar = ({ showSideBar, setShowSideBar, setShowComingSoon }) => {
+
     return (
         <div className={`
             h-full
@@ -46,10 +48,22 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
 
                     <div className='mt-16 w-full flex justify-start'>
                         <ul>
-                            <li className='space-x-2'><Bullet className="inline-block" /><span>Team</span></li>
-                            <li className='space-x-2'><Bullet className="inline-block" /><span>Road</span></li>
-                            <li className='space-x-2'><Bullet className="inline-block" /><span>About</span></li>
-                            <li className='space-x-2'><Bullet className="inline-block" /><span>Capital</span></li>
+                            <li className='space-x-2'><Bullet className="inline-block" /><span className='cursor-pointer' 
+                                onClick={() => {
+                                    setShowComingSoon(true)
+                                    setShowSideBar(false)
+                            }}>Team</span></li>
+                            <li className='space-x-2'><Bullet className="inline-block" /><span className='cursor-pointer' onClick={() => setShowSideBar(false)}>Road</span></li>
+                            <li className='space-x-2'><Bullet className="inline-block" /><span className='cursor-pointer' 
+                                onClick={() => {
+                                    setShowComingSoon(true)
+                                    setShowSideBar(false)
+                            }}>About</span></li>
+                            <li className='space-x-2'><Bullet className="inline-block" /><span className='cursor-pointer' 
+                                onClick={() => {
+                                    setShowComingSoon(true)
+                                    setShowSideBar(false)
+                            }}>Capital</span></li>
                         </ul>
                     </div>
 
@@ -57,8 +71,11 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar }) => {
                         <span>Follow the voyage:</span>
                         <div className='flex justify-between items-center'>
                             <div className='flex mt-4 justify-start items-center'>
-                                <DiscordButton />
-                                <TwitterButton />
+                                <DiscordButton onDiscord={() => {
+                                    setShowComingSoon(true)
+                                    setShowSideBar(false)
+                                }}/>
+                                <TwitterButton onTwitter={() => window.location.href = "https://twitter.com/voyajiofficial"}/>
                             </div>
 
                             <img src={GenerateLabsLogo} className="pointer-events-none"/>

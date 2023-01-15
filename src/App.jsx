@@ -8,11 +8,12 @@ import isMobileOrTablet from './utilities/isMobileOrTablet'
 import LocationSideBar from './components/LocationSideBar';
 import ComingSoon from './components/ComingSoon';
 import Div100vh from 'react-div-100vh';
+import { Router } from 'react-router-dom';
 
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
     const [showLeftSideBar, setShowLeftSideBar] = useState(false)
-    const [showComingSoon, setShowComingSoon] = useState(true)
+    const [showComingSoon, setShowComingSoon] = useState(false)
 
     const [leftSideBarData, setLeftSideBarData] = useState(null);
     const {width, height} = useWindowSize()
@@ -41,7 +42,7 @@ function App() {
             }
 
             <SideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} position="right">
-                <AboutUsSidebar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar}/>
+                <AboutUsSidebar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} setShowComingSoon={setShowComingSoon}/>
             </SideBar>
 
             <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">

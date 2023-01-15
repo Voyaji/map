@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const MapElements = ({ setShowLeftSideBar, setLeftSideBarData }) => {
+const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon }) => {
 
     const [mountainAnimate, setMountainAnimate] = useState(false)
     const [capitalAnimate, setCapitalAnimate] = useState(false)
@@ -36,7 +36,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData }) => {
             </g>
 
             <g
-                onClick={() => alert("Twitter")}
+                onClick={() => window.location.href = "https://twitter.com/voyajiofficial"}
                 onMouseEnter={() => setTwitterAnimate(true)}
                 onMouseLeave={() => setTwitterAnimate(false)}
                 className={`${twitterAnimate ? 'animate-pulse' : ''} cursor-pointer`}
