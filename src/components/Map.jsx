@@ -11,7 +11,9 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData, setS
     const {width:windowWidth, height:windowHeight} = useWindowSize();
     const [orientation, setOrientation] = useState('')
     const mapRef = useRef()
-    // let orientation = '';
+    
+    const [showElements, setShowElements] = useState(false)
+
 
     if(windowWidth && windowHeight){
         mapRef.current?.setAttribute('webkit-playsinline', true)
@@ -19,13 +21,11 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData, setS
             if(orientation !== 'portrait'){
                 setOrientation('portrait')
             }
-            // orientation = 'portrait'
         }
         else{
             if(orientation !== 'landscape'){
                 setOrientation('landscape')
             }
-            // orientation = 'landscape'
         }
     }
        
@@ -47,10 +47,10 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData, setS
                 <>
                     <TransformComponent wrapperStyle={{ width: '100%', height: '100%' }}>
                         <div className='relative'>                            
-                            <video ref={mapRef} preload='auto' className="relative z-10" autoPlay={true} muted={true} loop={true} playsInline={true}>
+                            <video ref={mapRef} preload='auto' className="relative z-10" autoPlay={true} muted={true} loop={true} playsInline={true} onLoadedData={() => setShowElements(true)}>
                                 <source src={require('../assets/videos/Map for animation2.mp4')} type="video/mp4" />
                             </video>
-                            <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData} setShowComingSoon={setShowComingSoon}/>
+                            {showElements && <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData} setShowComingSoon={setShowComingSoon}/>}
                         </div>
                     </TransformComponent>
 

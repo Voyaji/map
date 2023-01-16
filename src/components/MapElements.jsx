@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import useWindowSize from '../hooks/useWindowResize'
 
 const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon }) => {
 
+    const {width, height} = useWindowSize()
+    
     const [treeAnimate, setTreeAnimate] = useState(false)
     const [mountainAnimate, setMountainAnimate] = useState(false)
     const [mountain2Animate, setMountain2Animate] = useState(false)

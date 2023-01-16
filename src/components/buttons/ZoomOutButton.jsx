@@ -5,8 +5,6 @@ import useWindowSize from '../../hooks/useWindowResize';
 const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
     const [orientation, setOrientation] = useState('')
-
-    // console.log(orientation)
     
     if(windowHeight && windowHeight){
         if(windowWidth > windowHeight && orientation !== 'landscape'){
@@ -34,8 +32,6 @@ const ZoomOutButton = ({ onZoomOut, onReset, onCenterView }) => {
             setTimeout(() => {
                 onCenterView(1)
             }, [1000])
-
-            console.log("reset")
         }
     }, [orientation])
 

@@ -28,13 +28,11 @@ function App() {
         setOriginalWindowWidth(window.innerWidth)
     }, [])
     
-    console.log("device", isMobileOrTabletBool);
-
     return (
         <>
             {isMobileOrTabletBool
                 ? height && <div className={`bg-cream`} style={{height: `${originalWindowHeight}px`}}>
-                        <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData}/>
+                        <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData} setShowComingSoon={setShowComingSoon}/>
                     </div>
                 : <div className='h-screen'>
                     <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData} setShowComingSoon={setShowComingSoon}/>
