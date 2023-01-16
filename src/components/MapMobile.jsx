@@ -11,7 +11,7 @@ const MapMobile = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData
         <>
             <div className={`h-full overflow-scroll relative`}>
                 <video preload='auto' className={`object-cover h-full max-w-none aspect-[1.5] absolute inset-0`} autoPlay={true} muted={true} loop={true} playsInline={true}>
-                    <source src={require('../assets/videos/MAP_FINAL.mp4')} type="video/mp4" />
+                    <source src={require('../assets/videos/Map for animation2.mp4')} type="video/mp4" />
                 </video>
                 <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData} setShowComingSoon={setShowComingSoon}/>
             </div>
