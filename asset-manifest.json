@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/voyaji-react/static/css/main.6d00f860.css",
-    "main.js": "/voyaji-react/static/js/main.551f2a3a.js",
-    "static/media/Map for animation2.mp4": "/voyaji-react/static/media/Map for animation2.79d42bad17eeef5ca7c7.mp4",
+    "main.css": "/voyaji-react/static/css/main.cfe8f198.css",
+    "main.js": "/voyaji-react/static/js/main.1a08af72.js",
     "static/media/left_side_bar.svg": "/voyaji-react/static/media/left_side_bar.8d34f8834ccd1527cf6a5be144a31636.svg",
+    "static/media/map looped.mp4": "/voyaji-react/static/media/map looped.7dda59d0e7f12336c544.mp4",
     "static/media/rectangle_frame.svg": "/voyaji-react/static/media/rectangle_frame.6eb52bb3b8426b0f4f6b40d97fd79821.svg",
     "static/media/Montserrat-Regular.ttf": "/voyaji-react/static/media/Montserrat-Regular.2a2d37bf7680d86811db.ttf",
     "static/media/Enchanted-Land.otf": "/voyaji-react/static/media/Enchanted-Land.186931530b4eaddf94c0.otf",
@@ -11,7 +11,7 @@
     "index.html": "/voyaji-react/index.html"
   },
   "entrypoints": [
-    "static/css/main.6d00f860.css",
-    "static/js/main.551f2a3a.js"
+    "static/css/main.cfe8f198.css",
+    "static/js/main.1a08af72.js"
   ]
 }
