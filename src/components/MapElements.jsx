@@ -21,7 +21,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
     const handleClickLocation = (url) => {
         // setShowLeftSideBar(true)
         // setLeftSideBarData({ name })
-        if(url){
+        if(typeof url === "string"){
             window.location.href = url;
         }
         else{
