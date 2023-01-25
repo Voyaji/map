@@ -18,10 +18,15 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
     const [twitterAnimate, setTwitterAnimate] = useState(false)
     const [humanAnimate, setHumanAnimate] = useState(false)
 
-    const handleClickLocation = (name) => {
+    const handleClickLocation = (url) => {
         // setShowLeftSideBar(true)
         // setLeftSideBarData({ name })
-        setShowComingSoon(true)
+        if(url){
+            window.location.href = url;
+        }
+        else{
+            setShowComingSoon(true)
+        }
     }
 
     return (
@@ -200,7 +205,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Tree */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=The entire world is in fact a tree , and we are in the middle of it @voyajiofficial")}
                 onMouseEnter={() => setTreeAnimate(true)}
                 onMouseLeave={() => setTreeAnimate(false)}
                 className={`${treeAnimate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -219,7 +224,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Ship */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=I%27m%20anticipating%20to%20visit%20the%20Open%20Sea.....%20@voyajiofficial")}
                 onMouseEnter={() => setShipAnimate(true)}
                 onMouseLeave={() => setShipAnimate(false)}
                 className={`${shipAnimate ? 'animate-pulse' : ''} cursor-pointer`}

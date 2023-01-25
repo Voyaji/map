@@ -5,7 +5,7 @@ import DiscordButton from './buttons/DiscordButton'
 import TwitterButton from './buttons/TwitterButton'
 import GenerateLabsLogo from '../assets/images/logo_generate_labs.svg'
 // import GenerateLabsLogo from './GenerateLabsLogo'
-import SideBarBackground from '../assets/images/left_side_bar.svg'
+import SideBarBackground from '../assets/images/burger_background.svg'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -16,18 +16,19 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar, setShowComingSoon }) => {
             h-full
             ${showSideBar ? 'z-[1000] opacity-100' : '-z-10 opacity-0'}
             right-0
-            bg-white fixed top-0 h-full transition-opacity duration-200 ease-in-out
+            bg-transparent fixed top-0 h-full transition-opacity duration-200 ease-in-out
             flex flex-col
-
+            shadow-inner
             w-full md:w-3/5 lg:w-1/2 xl:w-1/4
-
             `}>
             <div
-                className='h-full'
+                className='h-full rounded-l-xl'
                 style={{
                     backgroundImage: `url(${SideBarBackground})`,
                     backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
+                    backgroundRepeat: 'no-repeat',
+                    boxShadow: "12px 0 15px -8px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(0,0,0,0.5)"
+
                 }}>
 
                 <div className='overflow-scroll py-16 mb-6 scrollbar-hide h-full
