@@ -40,7 +40,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Mountain */}
             <g
-                onClick={() => handleClickLocation("Mountain")}
+                onClick={handleClickLocation}
                 onMouseEnter={() => setMountainAnimate(true)}
                 onMouseLeave={() => setMountainAnimate(false)}
                 className={`${mountainAnimate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -59,7 +59,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Mountain 2 */}
             <g 
-                onClick={() => handleClickLocation("Mountain 2")}
+                onClick={handleClickLocation}
                 onMouseEnter={() => setMountain2Animate(true)}
                 onMouseLeave={() => setMountain2Animate(false)}
                 className={`${mountain2Animate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -100,7 +100,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Capital */}
             <g
-                onClick={() => handleClickLocation("Capital")}
+                onClick={handleClickLocation}
                 onMouseEnter={() => setCapitalAnimate(true)}
                 onMouseLeave={() => setCapitalAnimate(false)}
                 className={`${capitalAnimate ? 'animate-pulse' : ''} cursor-pointer`}
