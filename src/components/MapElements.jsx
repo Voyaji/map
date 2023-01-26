@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import useWindowSize from '../hooks/useWindowResize'
 
-const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon }) => {
-
-    const {width, height} = useWindowSize()
+const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setComingSoonData }) => {
     
     const [treeAnimate, setTreeAnimate] = useState(false)
     const [mountainAnimate, setMountainAnimate] = useState(false)
@@ -22,10 +20,10 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
         // setShowLeftSideBar(true)
         // setLeftSideBarData({ name })
         if(typeof url === "string"){
-            window.location.href = url;
+            setComingSoonData({showComingSoon: true, redirectUrl: url});
         }
         else{
-            setShowComingSoon(true)
+            setComingSoonData({showComingSoon: true, redirectUrl: ""});
         }
     }
 
@@ -59,7 +57,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Mountain 2 */}
             <g 
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("")}
                 onMouseEnter={() => setMountain2Animate(true)}
                 onMouseLeave={() => setMountain2Animate(false)}
                 className={`${mountain2Animate ? 'animate-pulse' : ''} cursor-pointer`}

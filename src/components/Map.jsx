@@ -7,7 +7,7 @@ import ZoomInButton from './buttons/ZoomInButton'
 import ZoomOutButton from './buttons/ZoomOutButton'
 import MapElements from './MapElements'
 
-const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData, setShowComingSoon }) => {
+const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData, setComingSoonData }) => {
     const {width:windowWidth, height:windowHeight} = useWindowSize();
     const [orientation, setOrientation] = useState('')
     const mapRef = useRef()
@@ -50,7 +50,7 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData, setS
                             <video ref={mapRef} preload='auto' className="relative z-10" autoPlay={true} muted={true} loop={true} playsInline={true} onLoadedData={() => setShowElements(true)}>
                                 <source src={require('../assets/videos/map looped.mp4')} type="video/mp4" />
                             </video>
-                            {showElements && <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData} setShowComingSoon={setShowComingSoon}/>}
+                            {showElements && <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData} setComingSoonData={setComingSoonData} />}
                         </div>
                     </TransformComponent>
 

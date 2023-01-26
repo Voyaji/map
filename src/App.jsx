@@ -13,7 +13,11 @@ import { Router } from 'react-router-dom';
 function App() {
     const [showRightSideBar, setShowRightSideBar] = useState(false)
     const [showLeftSideBar, setShowLeftSideBar] = useState(false)
-    const [showComingSoon, setShowComingSoon] = useState(false)
+    const [comingSoonData, setComingSoonData] = useState({
+        showComingSoon: false,
+        redirectUrl: ""
+    });
+
 
     const [leftSideBarData, setLeftSideBarData] = useState(null);
     const {width, height} = useWindowSize()
@@ -32,22 +36,22 @@ function App() {
         <>
             {isMobileOrTabletBool
                 ? height && <div className={`bg-cream`} style={{height: `${originalWindowHeight}px`}}>
-                        <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData} setShowComingSoon={setShowComingSoon}/>
+                        <MapMobile setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData} setComingSoonData={setComingSoonData} />
                     </div>
                 : <div className='h-screen'>
-                    <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData} setShowComingSoon={setShowComingSoon}/>
+                    <Map setShowLeftSideBar={setShowLeftSideBar} setShowRightSideBar={setShowRightSideBar} setLeftSideBarData={setLeftSideBarData} setComingSoonData={setComingSoonData}/>
                 </div>
             }
 
             <SideBar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} position="right">
-                <AboutUsSidebar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} setShowComingSoon={setShowComingSoon}/>
+                <AboutUsSidebar showSideBar={showRightSideBar} setShowSideBar={setShowRightSideBar} setShowComingSoon={comingSoonData.showComingSoon}/>
             </SideBar>
 
             <SideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} position="left">
                 <LocationSideBar showSideBar={showLeftSideBar} setShowSideBar={setShowLeftSideBar} data={leftSideBarData}/>
             </SideBar>
 
-            <ComingSoon showModal={showComingSoon} setShowModal={setShowComingSoon}/>
+            <ComingSoon comingSoonData={comingSoonData} setComingSoonData={setComingSoonData}/>
         </>
 
     );
