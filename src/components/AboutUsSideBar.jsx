@@ -38,7 +38,7 @@ const AboutUsSidebar = ({ showSideBar, setShowSideBar, setShowComingSoon }) => {
                         onClose={() => setShowSideBar(false)} />
 
                     <div className='w-full flex justify-center text-center'>
-                        <h1 className='font-enchantedLand text-5xl text-grey-dark'>Are you for an epic quest <br /> Voyager?</h1>
+                        <h1 className='font-enchantedLand text-5xl text-grey-dark'>Are you ready for an epic quest <br /> Voyager?</h1>
                     </div>
 
                     <div className='mt-16 w-full flex justify-center'>
