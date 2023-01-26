@@ -3,17 +3,17 @@
   "name": "Voyaji Map",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/favicon.ico?alt=media&token=e5c776cf-7e8a-497e-94b0-3e2baf1060be",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/android-chrome-192x192.png?alt=media&token=8dd5e604-5de7-4387-a346-a14e7899adfe",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/android-chrome-512x512.png?alt=media&token=a304d9d7-9330-4cea-b6b7-e1afed1dbcfe",
       "type": "image/png",
       "sizes": "512x512"
     }
