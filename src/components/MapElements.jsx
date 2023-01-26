@@ -40,7 +40,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Mountain */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=Here lies the beginning of the end....@voyajiofficial")}
                 onMouseEnter={() => setMountainAnimate(true)}
                 onMouseLeave={() => setMountainAnimate(false)}
                 className={`${mountainAnimate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -100,7 +100,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Capital */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=Are you ready for an epic quest Voyager? We are Voyaji, a collective building an IP led by designers, creators and artists alike. Together with Generate Labs, We picture a Metaverse united by Creatives from all backgrounds. @voyajiofficial")}
                 onMouseEnter={() => setCapitalAnimate(true)}
                 onMouseLeave={() => setCapitalAnimate(false)}
                 className={`${capitalAnimate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -117,7 +117,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
             
             {/* Human */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=The capital welcomes all who wishes to visit….@voyajiofficial")}
                 onMouseEnter={() => setHumanAnimate(true)}
                 onMouseLeave={() => setHumanAnimate(false)}
                 className={`${humanAnimate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -134,7 +134,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* House 1 */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=I'm wondering where are you off to? Voyager....@voyajiofficial")}
                 onMouseEnter={() => setHouse1Animate(true)}
                 onMouseLeave={() => setHouse1Animate(false)}
                 className={`${house1Animate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -151,7 +151,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* House 2 */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=A little quiant town in village to be discovered at @voyajiofficial")}
                 onMouseEnter={() => setHouse2Animate(true)}
                 onMouseLeave={() => setHouse2Animate(false)}
                 className={`${house2Animate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -168,7 +168,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Trench */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=Beware! The dangers of the deep trenches. Once you enter there is no turning back...@voyajiofficial")}
                 onMouseEnter={() => setTrenchAnimate(true)}
                 onMouseLeave={() => setTrenchAnimate(false)}
                 className={`${trenchAnimate ? 'animate-pulse' : ''} cursor-pointer`}
@@ -187,7 +187,7 @@ const MapElements = ({ setShowLeftSideBar, setLeftSideBarData, setShowComingSoon
 
             {/* Mine */}
             <g
-                onClick={handleClickLocation}
+                onClick={() => handleClickLocation("https://twitter.com/intent/tweet?text=What treasures lie beneath the depths of Voyaji? @voyajiofficial")}
                 onMouseEnter={() => setMineAnimate(true)}
                 onMouseLeave={() => setMineAnimate(false)}
                 className={`${mineAnimate ? 'animate-pulse' : ''} cursor-pointer`}
