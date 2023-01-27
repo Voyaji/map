@@ -95,7 +95,7 @@ const VolumeButton = () => {
 
             if(isVolumeOn){
                 alert("before await play!");
-                await audioRef.current.play();
+                audioRef.current.play();
                 alert("play!");
             }
             else{
