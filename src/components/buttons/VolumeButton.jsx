@@ -92,7 +92,9 @@ const VolumeButton = () => {
     
     useEffect(() => {
         const fn = async () => {
+
             if(isVolumeOn){
+                alert("before await play!");
                 await audioRef.current.play();
                 alert("play!");
             }
