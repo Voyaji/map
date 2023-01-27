@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import { useEffect } from 'react'
 
 const VolumeOnButton = ({className}) => {
     return (
@@ -87,9 +88,28 @@ const VolumeOffButton = ({className}) => {
 
 const VolumeButton = ({ onVolumeToggle }) => {
     const [isVolumeOn, setIsVolumeOn] = useState(true);
+    const audioRef = useRef(null);
+
+    useEffect(() => {
+        if(audioRef.current){
+            if(isVolumeOn){
+                audioRef.current.play();
+            }
+            else{
+                audioRef.current.pause();
+                audioRef.current.currentTime = 0;
+            }
+        }
+    }, [isVolumeOn]);
+
+    useEffect(() => {
+        audioRef.current?.setAttribute('webkit-playsinline', true)
+    }, []);
+
 
     return (
-        <div onClick={() => setIsVolumeOn(!isVolumeOn)} className="flex relative w-[80px] h-[80px]" >
+        <div onClick={() => setIsVolumeOn(!isVolumeOn)} className="flex relative w-[80px] h-[80px]">
+            <audio ref={audioRef} src="https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Music.mp3?alt=media&token=bb005cf0-fa30-4da4-a8f0-bb0a009a50e7" loop />
             <VolumeOnButton  className={`absolute inset-0 ${isVolumeOn? 'z-20':'z-10'}`}/> 
             <VolumeOffButton className={`absolute inset-0 ${!isVolumeOn? 'z-20':'z-10'}`} />
         </div>
