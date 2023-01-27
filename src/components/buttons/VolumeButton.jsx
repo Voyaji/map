@@ -97,11 +97,13 @@ const VolumeButton = () => {
                 alert("before await play!");
                 await audioRef.current.pause();
                 audioRef.current.currentTime = 0;
+                alert("after pause");
                 await audioRef.current.play();
-                alert("play!");
+                alert("play1!");
             }
             else{
                 await audioRef.current.pause();
+                alert("after pause");
                 audioRef.current.currentTime = 0;
             }
             
@@ -110,9 +112,9 @@ const VolumeButton = () => {
 
     }, [isVolumeOn]);
 
-    useEffect(() => {
-        audioRef.current?.setAttribute('webkit-playsinline', true)
-    }, []);
+    // useEffect(() => {
+    //     audioRef.current?.setAttribute('webkit-playsinline', true)
+    // }, []);
 
 
     return (
@@ -121,7 +123,7 @@ const VolumeButton = () => {
 
             <VolumeOnButton  className={`absolute inset-0 ${isVolumeOn? 'z-20':'z-10'}`}/> 
             <VolumeOffButton className={`absolute inset-0 ${!isVolumeOn? 'z-20':'z-10'}`} />
-            <audio className='relative top-0 z-30' ref={audioRef} loop playsInline={true} preload="auto" onLoadedData={() => alert("Can play now!")} >
+            <audio className='relative top-0 z-30' ref={audioRef} loop playsInline={true} preload="auto" >
                 <source src="https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Music.mp3?alt=media&token=bb005cf0-fa30-4da4-a8f0-bb0a009a50e7" type="audio/mpeg"/>
                 <p>Your browser does not support HTML Audio.</p>
             </audio>
