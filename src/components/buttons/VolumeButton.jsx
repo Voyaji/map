@@ -86,27 +86,21 @@ const VolumeOffButton = ({className}) => {
     )
 }
 
-const VolumeButton = ({ onVolumeToggle }) => {
+const VolumeButton = () => {
     const [isVolumeOn, setIsVolumeOn] = useState(false);
     const audioRef = useRef(null);
-
-    const audio = new Audio();
-    audio.src = "https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Music.mp3?alt=media&token=bb005cf0-fa30-4da4-a8f0-bb0a009a50e7";
-
-
     
     useEffect(() => {
         const fn = async () => {
-            if(audioRef.current){
-                if(isVolumeOn){
-                    await audioRef.current.play();
-                    alert("play!");
-                }
-                else{
-                    await audioRef.current.pause();
-                    audioRef.current.currentTime = 0;
-                }
+            if(isVolumeOn){
+                await audioRef.current.play();
+                alert("play!");
             }
+            else{
+                await audioRef.current.pause();
+                audioRef.current.currentTime = 0;
+            }
+            
         }
         fn();
 
