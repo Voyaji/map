@@ -113,7 +113,7 @@ const VolumeButton = ({ onVolumeToggle }) => {
 
     return (
         <div onClick={() => setIsVolumeOn(!isVolumeOn)} className="flex relative w-[80px] h-[80px]">
-            <audio ref={audioRef} loop playsInline>
+            <audio ref={audioRef} loop playsInline={true} playsinlne={true}>
                 <source src="https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Music.mp3?alt=media&token=bb005cf0-fa30-4da4-a8f0-bb0a009a50e7" type="audio/mpeg"/>
                 <p>Your browser does not support HTML Audio.</p>
             </audio>
