@@ -90,11 +90,17 @@ const VolumeButton = ({ onVolumeToggle }) => {
     const [isVolumeOn, setIsVolumeOn] = useState(false);
     const audioRef = useRef(null);
 
+    const audio = new Audio();
+    audio.src = "https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Music.mp3?alt=media&token=bb005cf0-fa30-4da4-a8f0-bb0a009a50e7";
+
+
+    
     useEffect(() => {
         const fn = async () => {
             if(audioRef.current){
                 if(isVolumeOn){
                     await audioRef.current.play();
+                    alert("play!");
                 }
                 else{
                     await audioRef.current.pause();
@@ -117,7 +123,7 @@ const VolumeButton = ({ onVolumeToggle }) => {
 
             <VolumeOnButton  className={`absolute inset-0 ${isVolumeOn? 'z-20':'z-10'}`}/> 
             <VolumeOffButton className={`absolute inset-0 ${!isVolumeOn? 'z-20':'z-10'}`} />
-            <audio className='relative top-full w-[400px] h-[200px]' ref={audioRef} loop playsInline={true} playsinlne={true} controls>
+            <audio className='relative top-0 z-30' ref={audioRef} loop playsInline={true} playsinlne={true} >
                 <source src="https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Music.mp3?alt=media&token=bb005cf0-fa30-4da4-a8f0-bb0a009a50e7" type="audio/mpeg"/>
                 <p>Your browser does not support HTML Audio.</p>
             </audio>
