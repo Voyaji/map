@@ -119,7 +119,7 @@ const VolumeButton = () => {
 
 
     return (
-        <div onClick={() => setIsVolumeOn(!isVolumeOn)} className="flex relative w-[80px] h-[80px]">
+        <div onClickCapture={() => setIsVolumeOn(!isVolumeOn)} className="flex relative w-[80px] h-[80px]">
             <VolumeOnButton  className={`absolute inset-0 ${isVolumeOn? 'z-20':'z-10'}`}/> 
             <VolumeOffButton className={`absolute inset-0 ${!isVolumeOn? 'z-20':'z-10'}`} />
             <audio ref={audioRef} loop playsInline={true} preload="metadata" >
