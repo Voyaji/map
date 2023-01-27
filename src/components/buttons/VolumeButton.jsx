@@ -94,6 +94,7 @@ const VolumeButton = () => {
         const fn = async () => {
 
             if(isVolumeOn){
+                audioRef.current.currentTime = 0;
                 await audioRef.current.play();
             }
             else{
