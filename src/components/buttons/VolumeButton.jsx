@@ -95,7 +95,12 @@ const VolumeButton = () => {
 
             if(isVolumeOn){
                 audioRef.current.currentTime = 0;
-                await audioRef.current.play();
+                try{
+                    await audioRef.current.play();
+                }
+                catch(error){
+                    alert(error);
+                }
 
             }
             else{
