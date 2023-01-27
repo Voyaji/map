@@ -87,7 +87,7 @@ const VolumeOffButton = ({className}) => {
 }
 
 const VolumeButton = ({ onVolumeToggle }) => {
-    const [isVolumeOn, setIsVolumeOn] = useState(true);
+    const [isVolumeOn, setIsVolumeOn] = useState(false);
     const audioRef = useRef(null);
 
     useEffect(() => {
