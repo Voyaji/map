@@ -48,7 +48,8 @@ const Map = ({ setShowLeftSideBar, setShowRightSideBar, setLeftSideBarData, setC
                     <TransformComponent wrapperStyle={{ width: '100%', height: '100%' }}>
                         <div className='relative'>                            
                             <video ref={mapRef} preload='auto' className="relative z-10" autoPlay={true} muted={true} loop={true} playsInline={true} onLoadedData={() => setShowElements(true)}>
-                                <source src={require('../assets/videos/map looped.mp4')} type="video/mp4" />
+                                {/* <source src={require('../assets/videos/map looped.mp4')} type="video/mp4" /> */}
+                                <source src='https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Video.mp4?alt=media&token=e685c537-c3e2-43a1-a5a5-beec37a01a24' type="video/mp4" />
                             </video>
                             {showElements && <MapElements setShowLeftSideBar={setShowLeftSideBar} setLeftSideBarData={setLeftSideBarData} setComingSoonData={setComingSoonData} />}
                         </div>
