@@ -91,15 +91,19 @@ const VolumeButton = ({ onVolumeToggle }) => {
     const audioRef = useRef(null);
 
     useEffect(() => {
-        if(audioRef.current){
-            if(isVolumeOn){
-                audioRef.current.play();
-            }
-            else{
-                audioRef.current.pause();
-                audioRef.current.currentTime = 0;
+        const fn = async () => {
+            if(audioRef.current){
+                if(isVolumeOn){
+                    await audioRef.current.play();
+                }
+                else{
+                    await audioRef.current.pause();
+                    audioRef.current.currentTime = 0;
+                }
             }
         }
+        fn();
+
     }, [isVolumeOn]);
 
     useEffect(() => {
