@@ -87,7 +87,7 @@ const VolumeOffButton = ({className}) => {
 }
 
 const VolumeButton = () => {
-    const [isVolumeOn, setIsVolumeOn] = useState(true);
+    const [isVolumeOn, setIsVolumeOn] = useState(false);
     const audioRef = useRef(null);
     
     useEffect(() => {
@@ -114,7 +114,6 @@ const VolumeButton = () => {
     }, [isVolumeOn]);
 
     useEffect(() => {
-        setIsVolumeOn(false)
         audioRef.current?.setAttribute('webkit-playsinline', true)
     }, []);
 
