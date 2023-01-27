@@ -109,7 +109,7 @@ const VolumeButton = ({ onVolumeToggle }) => {
 
     return (
         <div onClick={() => setIsVolumeOn(!isVolumeOn)} className="flex relative w-[80px] h-[80px]">
-            <audio ref={audioRef} src="https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Music.mp3?alt=media&token=bb005cf0-fa30-4da4-a8f0-bb0a009a50e7" loop />
+            <audio ref={audioRef} src="https://firebasestorage.googleapis.com/v0/b/voyaji-map.appspot.com/o/Voyaji_Music.mp3?alt=media&token=bb005cf0-fa30-4da4-a8f0-bb0a009a50e7" loop playsInline />
             <VolumeOnButton  className={`absolute inset-0 ${isVolumeOn? 'z-20':'z-10'}`}/> 
             <VolumeOffButton className={`absolute inset-0 ${!isVolumeOn? 'z-20':'z-10'}`} />
         </div>
